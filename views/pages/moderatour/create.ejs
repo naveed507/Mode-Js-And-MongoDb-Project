@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../partials/header.ejs') %>
+  <body>
+    <div class="container-scroller">
+      <%- include('../../partials/navbar.ejs') %>
+
+      <div class="container-fluid page-body-wrapper">
+        <%- include('../../partials/sidebar.ejs') %>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">Create New Moderatour</h3>
+            </div>
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <p class="card-description">Basic form layout</p>
+                    <form
+                      class="forms-sample"
+                      method="post"
+                      action="/create-new-moderator"
+                    >
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="exampleInputUsername1"
+                              >First Name</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInputUsername1"
+                              placeholder="First Name"
+                              name="first_name"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="exampleInputUsername2">Last Name</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInputUsername2"
+                              placeholder="Last Name"
+                              name="last_name"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="exampleInputUsername3"
+                              >UserName / Email</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleInputUsername3"
+                              placeholder="Email"
+                              name="email"
+                            />
+                          </div>
+                        </div>
+                        <!-- <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="exampleInputUsername4">Password</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="exampleInputUsername4"
+                              placeholder="Password"
+                              name="password"
+                            />
+                          </div>
+                        </div> -->
+                      </div>
+
+                      <div
+                        class="form-check form-check-flat form-check-primary"
+                      >
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" />
+                          Remember me <i class="input-helper"></i
+                        ></label>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2">
+                        Submit
+                      </button>
+                      <button class="btn btn-light">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div
+              class="d-sm-flex justify-content-center justify-content-sm-between"
+            >
+              <span
+                class="text-muted d-block text-center text-sm-left d-sm-inline-block"
+                >Copyright © bootstrapdash.com 2020</span
+              >
+              <span
+                class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"
+              >
+                Free
+                <a
+                  href="https://www.bootstrapdash.com/bootstrap-admin-template/"
+                  target="_blank"
+                  >Bootstrap admin templates</a
+                >
+                from Bootstrapdash.com</span
+              >
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+      </div>
+    </div>
+
+    <%- include('../../partials/footer-scripts.ejs') %>
+  </body>
+</html>

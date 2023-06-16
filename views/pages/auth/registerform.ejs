@@ -2,13 +2,19 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Stellar Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <link
+      rel="stylesheet"
+      href="vendors/simple-line-icons/css/simple-line-icons.css"
+    />
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css" />
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -26,30 +32,76 @@
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
-                  <img src="images/logo.svg">
+                  <img src="images/logo.svg" />
                 </div>
                 <h4>New here?</h4>
-                <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                <h6 class="font-weight-light">
+                  Signing up is easy. It only takes a few steps
+                </h6>
+                <% if ( messages.error) { %>
+                <div class="alert alert-danger alert-dismissible fade show">
+                  <button type="button" class="close" data-dismiss="alert">
+                    &times;
+                  </button>
+                  <strong>Warning!</strong> <%= messages.error %>
+                </div>
+                <% } %>
                 <form method="post" action="/submitregister" class="pt-3">
-                 
                   <div class="form-group">
-                    <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                    <input
+                      type="text"
+                      name="first_name"
+                      class="form-control form-control-lg"
+                      id="exampleInputFName"
+                      placeholder="First Name"
+                    />
                   </div>
-                 
                   <div class="form-group">
-                    <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input
+                      type="text"
+                      name="last_name"
+                      class="form-control form-control-lg"
+                      id="exampleInputLName"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control form-control-lg"
+                      id="exampleInputEmail1"
+                      placeholder="Email"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      name="password"
+                      class="form-control form-control-lg"
+                      id="exampleInputPassword1"
+                      placeholder="Password"
+                    />
                   </div>
                   <div class="mb-4">
                     <div class="form-check">
                       <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input"> I agree to all Terms & Conditions </label>
+                        <input type="checkbox" class="form-check-input" /> I
+                        agree to all Terms & Conditions
+                      </label>
                     </div>
                   </div>
                   <div class="mt-3">
-                    <input type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="SIGN UP">
-
+                    <input
+                      type="submit"
+                      class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+                      value="SIGN UP"
+                    />
                   </div>
-                  <div class="text-center mt-4 font-weight-light"> Already have an account? <a href="login" class="text-primary">Login</a>
+                  <div class="text-center mt-4 font-weight-light">
+                    Already have an account?
+                    <a href="login" class="text-primary">Login</a>
                   </div>
                 </form>
               </div>
