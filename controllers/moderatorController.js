@@ -5,12 +5,12 @@ import EmailService from "../common_services/emailService.js";
 import userModal from "../models/userModal.js";
 
 class moderatorController {
-  static showModeratours = (req, res) => {
+  static showModeratours = async (req, res) => {
     try {
-      const allModerators = userModal.find();
+      const allModerators = await userModal.find({ userType: "MODERATOR" });
 
       console.log(allModerators);
-      res.render("pages/moderatour/index.ejs");
+      res.render("pages/moderatour/index.ejs", { data: allModerators });
     } catch (error) {}
   };
   static moderatourPage = (req, res) => {

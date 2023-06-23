@@ -44,19 +44,19 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <!-- <% var i = 1 %> <% data.forEach((item) =>{ %>
+                        <% var i = 1 %> <% data.forEach((item) =>{ %>
                         <tr>
                           <td><%= i++ %></td>
-                          <td>Jacob</td>
-                          <td></td>
-                          <td class="text-danger">
-                            28.76% <i class="icon-arrow-down-circle"></i>
-                          </td>
+                          <td><%= item.email %></td>
+                          <td><%= item.firstName %></td>
+                          <td><%= item.lastName %></td>
                           <td>
-                            <label class="badge badge-danger">Pending</label>
+                            <label class="badge badge-info"
+                              ><%= item.userType %></label
+                            >
                           </td>
                         </tr>
-                        <% }) %> -->
+                        <% }) %>
                       </tbody>
                     </table>
                   </div>

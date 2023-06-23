@@ -3,6 +3,20 @@ const router = express.Router();
 import AuthController from "../controllers/authController.js";
 import HomeController from "../controllers/homeController.js";
 import ModeratorController from "../controllers/moderatorController.js";
+import ProductController from "../controllers/productController.js";
+import CategoryController from "../controllers/categoryController.js";
+import multer from "multer";
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "../public/productimages/"); // Directory where the uploaded files will be stored
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname); // Generate a unique filename
+  },
+});
+const upload = multer({ storage: storage });
+
 const isLoggedIn = (req, res, next) => {
   if (req.user) {
     next();
@@ -37,4 +51,17 @@ router.post(
   ModeratorController.saveModerator
 );
 
+//Products Routes
+router.get("/products", isLoggedIn, ProductController.listProducts);
+router.get("/create-product", isLoggedIn, ProductController.createProduct);
+
+//Categories Routes
+router.get("/categories", isLoggedIn, CategoryController.index);
+router.get("/create-category", isLoggedIn, CategoryController.createCategory);
+router.post("/save-category", isLoggedIn, CategoryController.saveCategory);
+router.post(
+  "/save-product",
+  upload.single("cover_image"),
+  ProductController.saveProduct
+);
 export default router;

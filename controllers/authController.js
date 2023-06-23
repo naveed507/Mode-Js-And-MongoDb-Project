@@ -3,11 +3,14 @@ import { v4 as uuidv4 } from "uuid";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import nodemailer from "nodemailer";
+import toasterMsg from "../toaster.js";
 class authController {
   static loginform = (req, res) => {
     try {
       res.render("pages/auth/loginform");
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   static registerform = (req, res) => {
